@@ -18,25 +18,41 @@ public class LinkedStack<T> implements StackInterface<T> {
         topNode = newNode;
     }
 
-    @Override
+    /** Removes and returns this stack’s top entry.
+     @return either the object at the top of the stack or, if the
+     stack is empty before the operation, null */
     public T pop() {
-        return null;
+        T top = peek();
+        if (topNode != null) {
+            topNode = topNode.nextNode;
+        }
+
+        return top;
     }
 
-    @Override
+    /** Retrieves this stack’s top entry.
+     @return either the object at the top of the stack or null if
+     the stack is empty */
     public T peek() {
-        return null;
+        T top = null;
+        if (topNode != null) {
+            top = topNode.data;
+        }
+
+        return top;
     }
 
-    @Override
+    /** Detects whether this stack is empty.
+     @return true if the stack is empty */
     public boolean isEmpty() {
-        return false;
+        return topNode == null;
     }
 
-    @Override
+    /** Removes all entries from this stack */
     public void clear() {
-
+        topNode = null;
     }
+
 
     private class Node {
         private T data;
