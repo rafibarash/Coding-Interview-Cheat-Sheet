@@ -1,13 +1,6 @@
 package Graph;
 
-import Dictionary.Queue.LinkedQueue;
-import Dictionary.Queue.QueueInterface;
-import Dictionary.Stack.LinkedStack;
-import Dictionary.Stack.StackInterface;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  A class that implements the ADT directed graph.
