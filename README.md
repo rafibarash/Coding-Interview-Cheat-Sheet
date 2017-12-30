@@ -1,47 +1,89 @@
 # Coding Interview Cheat Sheet
-This cheat sheet is a short introduction to the implementation 
-and time and space analysis of popular data structures. It is 
-a summary of the typical data structures you would learn
-in that university csci course you've meant to take. This 
-project is open source, so everyone is encouraged to edit.
+This cheat sheet covers the basics of what you will see in 
+a coding interview. It is a summary of the first data 
+structures and algorithms course you would take at college. 
+Everyone is encouraged to edit and add info.
 
-## DataStructures.Bag
-### Implementation
-placeholder
-### Time and Space Analysis
-placeholder
+### Sections
+[Data Structures](#data-structures)
 
-## DataStructures.List
-### Implementation
-placeholder
-### Time and Space Analysis
-placeholder
+[Searching Algorithms](#searching-algorithms)
 
-## DataStructures.Stack
-### Implementation
-placeholder
-### Time and Space Analysis
-placeholder
+[Sorting Algorithms](#sorting-algorithms)
 
-## DataStructures.Queue
-### Implementation
-placeholder
-### Time and Space Analysis
-placeholder
+[Additional Resources](#additional-resources)
 
-## DataStructures.Dictionary
-### Implementation
-placeholder
-### Time and Space Analysis
-placeholder
 
-## DataStructures.Graph
-### Implementation
-placeholder
-### Time and Space Analysis
-placeholder
+## Data Structures
+#### ###Bag###
+##### What You Need To Know
+##### Big O Efficiency
 
-##### Implementation
-  placeholder
-  ### Time and Space Analysis
-  placeholder DataStructures.Tree
+#### ###List###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Queue###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Stack###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Dictionary###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Tree###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Graph###
+##### What You Need To Know
+##### Big O Efficiency
+
+
+## Searching Algorithms
+#### ###Binary Search###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Linear Search###
+##### What You Need To Know
+##### Big O Efficiency
+
+
+## Sorting Algorithms
+#### ###Selection Sort###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Bubble Sort###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Merge Sort###
+##### What You Need To Know
+##### Big O Efficiency
+
+#### ###Quick Sort###
+##### What You Need To Know
+##### Big O Efficiency
+
+
+## Additional Resources
+[Cracking The Coding Interview](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
+
+[Google Tech Development Guide](https://techdevguide.withgoogle.com/paths/foundational/)
+
+[TopCoder Data Science Tutorials](https://www.topcoder.com/community/data-science/data-science-tutorials/)
+
+[Grokking the System Design Interview](https://www.educative.io/collection/5668639101419520/5649050225344512)
+
+[HackerRank](https://www.hackerrank.com/dashboard)
+
+[LeetCode](https://leetcode.com/problemset/algorithms/)
+
+[Google Code Jam](https://code.google.com/codejam/)
+
