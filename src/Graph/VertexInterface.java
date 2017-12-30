@@ -1,6 +1,6 @@
 package Graph;
 
-import java.util.*;
+import java.util.Iterator;
 
 /**
  An interface for a vertex in a graph.

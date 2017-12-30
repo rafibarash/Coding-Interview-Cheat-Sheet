@@ -1,11 +1,16 @@
 package Dictionary;
 
-import java.util.*;
+/**
+ * Time Complexity Analysis of Operations
+ * Addition: O(n)
+ * Removal: O(n)
+ * Retrieval: O(n)
+ * Traversal: O(n)
+ */
+
+import java.util.Iterator;
 
 public class LinkedDictionary<K, V> implements DictionaryInterface<K, V> {
-
-    public LinkedDictionary() {
-    }
 
     public V add(K key, V value) {
         return null;

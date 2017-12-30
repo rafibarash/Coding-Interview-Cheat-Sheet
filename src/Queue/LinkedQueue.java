@@ -9,29 +9,56 @@ public class LinkedQueue<T> implements QueueInterface<T> {
         lastNode = null;
     }
 
-    @Override
+    /** Adds a new entry to the back of the queue.
+     @param newEntry  an object to be added */
     public void enqueue(T newEntry) {
-
+        Node newNode = new Node(newEntry, null);
+        if (isEmpty()) {
+            firstNode = newNode;
+        } else {
+            lastNode.nextNode = newNode;
+        }
+        lastNode = newNode;
     }
 
-    @Override
+    /** Removes and returns the entry at the front of this queue.
+     @return either the object at the front of the queue or, if the
+     queue is empty before the operation, null */
     public T dequeue() {
-        return null;
+        T front = getFront();
+
+        assert firstNode != null;
+        firstNode = firstNode.nextNode;
+
+        if (firstNode == null) {
+            lastNode = null;
+        }
+
+        return front;
     }
 
-    @Override
+    /** Retrieves the entry at the front of this queue.
+     @return either the object at the front of the queue or, if the
+     queue is empty, null */
     public T getFront() {
-        return null;
+        T first = null;
+        if (!isEmpty()) {
+            first = firstNode.data;
+        }
+
+        return first;
     }
 
-    @Override
+    /** Detects whether this queue is empty.
+     @return true if the queue is empty, or false otherwise */
     public boolean isEmpty() {
-        return false;
+        return (firstNode == null) && (lastNode == null);
     }
 
-    @Override
+    /** Removes all entries from this queue. */
     public void clear() {
-
+        firstNode = null;
+        lastNode = null;
     }
 
     private class Node {

@@ -1,42 +1,44 @@
 package Tree;
 
-import Stack.*;
+import Dictionary.Stack.LinkedStack;
+import Dictionary.Stack.StackInterface;
+
 import java.util.Iterator;
 
-public class BinaryTree<T extends Comparable<T>> implements BinaryTreeInterface<T> {
+public class BinaryTree<T extends Comparable<T>> implements Tree.BinaryTreeInterface<T> {
 
-    private BinaryNodeInterface<T> root;
+    private Tree.BinaryNodeInterface<T> root;
 
     public BinaryTree() {
         root = null;
     }
 
     public BinaryTree(T rootData) {
-        root = new BinaryNode<T>(rootData);
+        root = new Tree.BinaryNode<T>(rootData);
     }
 
-    public BinaryTree(T data, BinaryTreeInterface<T> leftTree, BinaryTreeInterface<T> rightTree) {
+    public BinaryTree(T data, Tree.BinaryTreeInterface<T> leftTree, Tree.BinaryTreeInterface<T> rightTree) {
         privateSetTree(data, leftTree, rightTree);
     }
 
     @Override
     public void setTree(T rootData) {
-        root = new BinaryNode<T>(rootData);
+        root = new Tree.BinaryNode<T>(rootData);
     }
 
     @Override
-    public void setTree(T rootData, BinaryTreeInterface<T> leftTree, BinaryTreeInterface<T> rightTree) {
+    public void setTree(T rootData, Tree.BinaryTreeInterface<T> leftTree, Tree.BinaryTreeInterface<T> rightTree) {
         privateSetTree(rootData, leftTree, rightTree);
     }
 
-    private void privateSetTree(T rootData, BinaryTreeInterface<T> leftTree, BinaryTreeInterface<T> rightTree) {
-        root = new BinaryNode<T>(rootData);
+    private void privateSetTree(T rootData, Tree.BinaryTreeInterface<T> leftTree, Tree.BinaryTreeInterface<T> rightTree) {
+        root = new Tree.BinaryNode<T>(rootData);
         if (leftTree != null && !leftTree.isEmpty()) {
-            BinaryNodeInterface<T> leftNode = ((BinaryTree<T>) leftTree).getRoot();
+            Tree.BinaryNodeInterface<T> leftNode = ((Tree.BinaryTree<T>) leftTree).getRoot();
             root.setLeftChild(leftNode);
         }
         if (rightTree != null && !rightTree.isEmpty()) {
-            BinaryNodeInterface<T> rightNode = ((BinaryTree<T>) rightTree).getRoot();
+            Tree.BinaryNodeInterface<T> rightNode = ((Tree.BinaryTree<T>) rightTree).getRoot();
             if (rightTree == leftTree) {
                 root.setRightChild(rightNode.copy());
             } else {
@@ -62,7 +64,7 @@ public class BinaryTree<T extends Comparable<T>> implements BinaryTreeInterface<
         return rootData;
     }
 
-    public BinaryNodeInterface<T> getRoot() {
+    public Tree.BinaryNodeInterface<T> getRoot() {
         return root;
     }
 
@@ -92,7 +94,7 @@ public class BinaryTree<T extends Comparable<T>> implements BinaryTreeInterface<
     }
 
     private class PreOrderIterator<T> implements Iterator {
-        private StackInterface<BinaryNodeInterface> stack = new LinkedStack<>();
+        private StackInterface<Tree.BinaryNodeInterface> stack = new LinkedStack<>();
 
         public PreOrderIterator() {
             stack.push(root);
@@ -106,7 +108,7 @@ public class BinaryTree<T extends Comparable<T>> implements BinaryTreeInterface<
         @Override
         public T next() {
             assert !stack.isEmpty();
-            BinaryNodeInterface node = stack.pop();
+            Tree.BinaryNodeInterface node = stack.pop();
             if (node.getRightChild() != null) {
                 stack.push(node.getRightChild());
             }

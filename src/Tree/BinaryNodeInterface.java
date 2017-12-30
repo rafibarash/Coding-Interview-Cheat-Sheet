@@ -21,28 +21,28 @@ public interface BinaryNodeInterface<T extends Comparable<T>> {
      *
      * @return the node that is this node’s left child
      */
-    public BinaryNodeInterface<T> getLeftChild();
+    public Tree.BinaryNodeInterface<T> getLeftChild();
 
     /**
      * Retrieves the right child of this node.
      *
      * @return the node that is this node’s right child
      */
-    public BinaryNodeInterface<T> getRightChild();
+    public Tree.BinaryNodeInterface<T> getRightChild();
 
     /**
      * Sets this node’s left child to a given node.
      *
      * @param leftChild a node that will be the left child
      */
-    public void setLeftChild(BinaryNodeInterface<T> leftChild);
+    public void setLeftChild(Tree.BinaryNodeInterface<T> leftChild);
 
     /**
      * Sets this node’s right child to a given node.
      *
      * @param rightChild a node that will be the right child
      */
-    public void setRightChild(BinaryNodeInterface<T> rightChild);
+    public void setRightChild(Tree.BinaryNodeInterface<T> rightChild);
 
     /**
      * Detects whether this node has a left child.
@@ -84,6 +84,6 @@ public interface BinaryNodeInterface<T extends Comparable<T>> {
      *
      * @return the root of a copy of the subtree rooted at this node
      */
-    public BinaryNodeInterface<T> copy();
+    public Tree.BinaryNodeInterface<T> copy();
 } // end BinaryNodeInterface
 

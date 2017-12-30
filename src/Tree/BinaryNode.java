@@ -1,8 +1,8 @@
 package Tree;
 
-public class BinaryNode<T extends Comparable<T>> implements BinaryNodeInterface<T> {
+public class BinaryNode<T extends Comparable<T>> implements Tree.BinaryNodeInterface<T> {
     private T data;
-    private BinaryNodeInterface<T> left, right;
+    private Tree.BinaryNodeInterface<T> left, right;
 
     public BinaryNode() {
         this(null);
@@ -14,7 +14,7 @@ public class BinaryNode<T extends Comparable<T>> implements BinaryNodeInterface<
         left = null;
     }
 
-    public BinaryNode(T data, BinaryNode<T> left, BinaryNode<T> right) {
+    public BinaryNode(T data, Tree.BinaryNode<T> left, Tree.BinaryNode<T> right) {
         this.data = data;
         this.left = left;
         this.right = right;
@@ -31,22 +31,22 @@ public class BinaryNode<T extends Comparable<T>> implements BinaryNodeInterface<
     }
 
     @Override
-    public BinaryNodeInterface<T> getLeftChild() {
+    public Tree.BinaryNodeInterface<T> getLeftChild() {
         return left;
     }
 
     @Override
-    public BinaryNodeInterface<T> getRightChild() {
+    public Tree.BinaryNodeInterface<T> getRightChild() {
         return right;
     }
 
     @Override
-    public void setLeftChild(BinaryNodeInterface<T> leftChild) {
+    public void setLeftChild(Tree.BinaryNodeInterface<T> leftChild) {
         left = leftChild;
     }
 
     @Override
-    public void setRightChild(BinaryNodeInterface<T> rightChild) {
+    public void setRightChild(Tree.BinaryNodeInterface<T> rightChild) {
         right = rightChild;
     }
 
@@ -90,8 +90,8 @@ public class BinaryNode<T extends Comparable<T>> implements BinaryNodeInterface<
 
 
     @Override
-    public BinaryNodeInterface<T> copy() {
-        BinaryNodeInterface root = new BinaryNode(this.data);
+    public Tree.BinaryNodeInterface<T> copy() {
+        Tree.BinaryNodeInterface root = new Tree.BinaryNode(this.data);
         if (left != null) {
             root.setLeftChild(left.copy());
         }
@@ -104,7 +104,7 @@ public class BinaryNode<T extends Comparable<T>> implements BinaryNodeInterface<
 
     @Override
     public boolean equals(Object obj) {
-        BinaryNodeInterface other = (BinaryNodeInterface)obj;
+        Tree.BinaryNodeInterface other = (Tree.BinaryNodeInterface)obj;
         boolean left, right;
 
         if (other == null) {

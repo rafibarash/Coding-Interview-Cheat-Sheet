@@ -2,7 +2,7 @@ package Tree;
 
 import java.util.Iterator;
 
-public class Tree<T extends Comparable<T>> implements TreeInterface<T> {
+public class Tree<T extends Comparable<T>> implements Tree.TreeInterface<T> {
 
     @Override
     public T getRootData() {
@@ -29,7 +29,7 @@ public class Tree<T extends Comparable<T>> implements TreeInterface<T> {
 
     }
 
-    private class TreeIterator<T> implements TreeIteratorInterface<T> {
+    private class TreeIterator<T> implements Tree.TreeIteratorInterface<T> {
 
         @Override
         public Iterator<T> getPreorderIterator() {

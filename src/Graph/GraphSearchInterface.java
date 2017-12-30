@@ -1,6 +1,7 @@
 package Graph;
 
-import java.util.*;
+import Dictionary.Queue.QueueInterface;
+import Dictionary.Stack.StackInterface;
 
 /**
  An interface of methods that process an existing graph.
@@ -15,18 +16,18 @@ public interface GraphSearchInterface<T>
      @param origin  An object that labels the origin vertex of the traversal.
      @return  A queue of labels of the vertices in the traversal, with
      the label of the origin vertex at the queue's front. */
-    public Queue<T> getBreadthFirstTraversal(T origin);
+    public QueueInterface<T> getBreadthFirstTraversal(T origin);
 
     /** Performs a depth-first traversal of this graph.
      @param origin  An object that labels the origin vertex of the traversal.
      @return  A queue of labels of the vertices in the traversal, with
      the label of the origin vertex at the queue's front. */
-    public Queue<T> getDepthFirstTraversal(T origin);
+    public QueueInterface<T> getDepthFirstTraversal(T origin);
 
     /** Performs a topological sort of the vertices in this graph without cycles.
      @return  A stack of vertex labels in topological order, beginning
      with the stack's top. */
-    public Stack<T> getTopologicalOrder();
+    public StackInterface<T> getTopologicalOrder();
 
     /** Finds the shortest-length path between two given vertices in this graph.
      @param begin  An object that labels the path's origin vertex.
@@ -37,7 +38,7 @@ public interface GraphSearchInterface<T>
      the label of the origin vertex is at the top, and
      the label of the destination vertex is at the bottom
      @return  The length of the shortest path. */
-    public int getShortestPath(T begin, T end, Stack<T> path);
+    public int getShortestPath(T begin, T end, StackInterface<T> path);
 
     /** Finds the least-cost path between two given vertices in this graph.
      @param begin  An object that labels the path's origin vertex.
@@ -48,6 +49,6 @@ public interface GraphSearchInterface<T>
      the label of the origin vertex is at the top, and
      the label of the destination vertex is at the bottom
      @return  The cost of the cheapest path. */
-    public double getCheapestPath(T begin, T end, Stack<T> path);
+    public double getCheapestPath(T begin, T end, StackInterface<T> path);
 } // end GraphAlgorithmsInterface
 
