@@ -26,12 +26,12 @@ Everyone is encouraged to edit and add info.
 ##### Operations and Efficiency
 | Name | Description | Big O Analysis |
 | --- | --- | --- |
-| getCurrentSize()  | Task: Reports the current number of objects in the bag. Input: None. Output: The number of objects currently in the bag.   | Linked: O(1) all casesArray: O(1) all cases |
-| isFull()   | Task: Sees whether the bag is full. Input: None. Output: True or false according to whether the bag is full.   | Linked: O(1) all casesArray: O(1) all cases |
-| isEmpty()   | Task: Sees whether the bag is empty. Input: None. Output: True or false according to whether the bag is empty.   | Linked: O(1) all casesArray: O(1) all cases |
-| add(newEntry)  | Task: Adds a given object to the bag. Input: newEntry is an object. Output: True or false according to whether the addition succeeds.   | Linked: O(1) all casesArray: O(1) all cases |
-| remove()   | Task: Removes an unspecified object from the bag, if possible. Input: None. Output: Either the removed object, if the removal was successful, or null.   | Linked: O(1) all casesArray: O(1) all cases |
-| remove(anEntry)   | Task: Removes an occurrence of a particular object from the bag, if possible. Input: anEntry is an object. Output: True or false according to whether the removal succeeds.   | Linked: O(n) all casesArray: O(n) all cases |
+| getCurrentSize()  | Task: Reports the current number of objects in the bag. Input: None.  Output: The number of objects currently in the bag.   | Linked: O(1) all cases Array: O(1) all cases |
+| isFull()   | Task: Sees whether the bag is full.  Input: None.  Output: True or false according to whether the bag is full.   | Linked: O(1) all cases Array: O(1) all cases |
+| isEmpty()   | Task: Sees whether the bag is empty. Input: None.  Output: True or false according to whether the bag is empty.   | Linked: O(1) all cases Array: O(1) all cases |
+| add(newEntry)  | Task: Adds a given object to the bag. Input: newEntry is an object.  Output: True or false according to whether the addition succeeds.   | Linked: O(1) all cases Array: O(1) all cases |
+| remove()   | Task: Removes an unspecified object from the bag, if possible. Input: None. Output: Either the removed object, if the removal was successful, or null.   | Linked: O(1) all cases Array: O(1) all cases |
+| remove(anEntry)   | Task: Removes an occurrence of a particular object from the bag, if possible. Input: anEntry is an object. Output: True or false according to whether the removal succeeds.   | Linked: O(n) all cases Array: O(n) all cases |
 | clear()   | Task: Removes all objects from the bag. Input: None. Output: None.   | Linked: O(1) all casesArray: O(1) all cases |
 | getFrequencyOf(anEntry)  | Task: Counts the number of times an object occurs in the bag. Input: anEntry is an object. Output: The integer number of times anEntry occurs in the bag.   | Linked: O(n) all casesArray: O(n) all cases |
 | contains(anEntry)  | Task: Tests whether the bag contains a particular object. Input: anEntry is an object. Output: True or false according to whether anEntry occurs in the bag.   | Linked: O(n) all casesArray: O(n) all cases |
