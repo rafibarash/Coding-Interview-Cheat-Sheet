@@ -12,23 +12,18 @@ public class ArrayQueue<T> implements QueueInterface<T> {
 
     public ArrayQueue(int capacity) {
         @SuppressWarnings("unchecked")
-        T[] tempQueue = (T[])new Object[capacity+1];
+        T[] tempQueue = (T[]) new Object[capacity + 1];
         queue = tempQueue;
         frontIndex = 0;
         backIndex = capacity;
     }
 
-    /** Adds a new entry to the back of the queue.
-     @param newEntry  an object to be added */
     public void enqueue(T newEntry) {
         ensureCapacity();
         backIndex = (backIndex + 1) % queue.length;
         queue[backIndex] = newEntry;
     }
 
-    /** Removes and returns the entry at the front of this queue.
-     @return either the object at the front of the queue or, if the
-     queue is empty before the operation, null */
     public T dequeue() {
         T front = null;
         if (!isEmpty()) {
@@ -41,9 +36,6 @@ public class ArrayQueue<T> implements QueueInterface<T> {
 
     }
 
-    /** Retrieves the entry at the front of this queue.
-     @return either the object at the front of the queue or, if the
-     queue is empty, null */
     public T getFront() {
         T front = null;
         if (!isEmpty()) {
@@ -53,13 +45,10 @@ public class ArrayQueue<T> implements QueueInterface<T> {
         return front;
     }
 
-    /** Detects whether this queue is empty.
-     @return true if the queue is empty, or false otherwise */
     public boolean isEmpty() {
         return frontIndex == (backIndex + 1) % queue.length;
     }
 
-    /** Removes all entries from this queue. */
     public void clear() {
         while (!isEmpty()) {
             dequeue();
@@ -71,7 +60,7 @@ public class ArrayQueue<T> implements QueueInterface<T> {
             T[] oldQueue = queue;
             int oldSize = queue.length;
             @SuppressWarnings("unchecked")
-            T[] tempQueue = (T[])new Object[2*oldSize]; // make new queue with double the size
+            T[] tempQueue = (T[]) new Object[2 * oldSize]; // make new queue with double the size
             queue = tempQueue;
             for (int i = 0; i < oldSize - 1; i++) {
                 queue[i] = oldQueue[frontIndex];

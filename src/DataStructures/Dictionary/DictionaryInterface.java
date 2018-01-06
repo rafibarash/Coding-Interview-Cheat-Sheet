@@ -1,6 +1,7 @@
 package DataStructures.Dictionary;
 /**
  * An interface for a dictionary with distinct search keys.
+ *
  * @author Frank M. Carrano
  */
 

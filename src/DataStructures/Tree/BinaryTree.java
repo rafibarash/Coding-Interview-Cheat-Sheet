@@ -57,7 +57,6 @@ public class BinaryTree<T extends Comparable<T>> implements BinaryTreeInterface<
         if (root != null) {
             rootData = root.getData();
         }
-
         return rootData;
     }
 
@@ -86,88 +85,22 @@ public class BinaryTree<T extends Comparable<T>> implements BinaryTreeInterface<
     }
 
     @Override
-    public Iterator<T> getPreorderIterator() {
-        return new PreOrderIterator<>();
+    public void preorder() {
+        root.preorder();
     }
 
-    private class PreOrderIterator<T> implements Iterator {
-        private Stack<BinaryNodeInterface> stack = new Stack<>();
-
-        public PreOrderIterator() {
-            stack.push(root);
-        }
-
-        @Override
-        public boolean hasNext() {
-            return !stack.isEmpty();
-        }
-
-        @Override
-        public T next() {
-            assert !stack.isEmpty();
-            BinaryNodeInterface node = stack.pop();
-            if (node.getRightChild() != null) {
-                stack.push(node.getRightChild());
-            }
-            if (node.getLeftChild() != null) {
-                stack.push(node.getLeftChild());
-            }
-
-            return (T)node.getData();
-        }
-    }
-
-    // TODO
     @Override
-    public Iterator<T> getPostorderIterator() {
-        return new PostOrderIterator<>();
+    public void inorder() {
+        root.inorder();
     }
 
-    private class PostOrderIterator<T> implements Iterator {
-        @Override
-        public boolean hasNext() {
-            return false;
-        }
-
-        @Override
-        public Object next() {
-            return null;
-        }
-    }
-
-    // TODO
     @Override
-    public Iterator<T> getInorderIterator() {
-        return new InOrderIterator<>();
+    public void postorder() {
+        root.postorder();
     }
 
-    private class InOrderIterator<T> implements Iterator {
-        @Override
-        public boolean hasNext() {
-            return false;
-        }
-
-        @Override
-        public Object next() {
-            return null;
-        }
-    }
-
-    // TODO
     @Override
-    public Iterator<T> getLevelOrderIterator() {
-        return new LevelOrderIterator<>();
-    }
-
-    private class LevelOrderIterator<T> implements Iterator {
-        @Override
-        public boolean hasNext() {
-            return false;
-        }
-
-        @Override
-        public Object next() {
-            return null;
-        }
+    public void levelorder() {
+        root.levelorder();
     }
 }

@@ -1,10 +1,12 @@
 package DataStructures.Graph;
 
-/** An interface of methods providing basic operations for directed
- and undirected graphs that are either weighted or unweighted.
- @author Frank M. Carrano
- @author Timothy M. Henry
- @version 4.0
+/**
+ * An interface of methods providing basic operations for directed
+ * and undirected graphs that are either weighted or unweighted.
+ *
+ * @author Frank M. Carrano
+ * @author Timothy M. Henry
+ * @version 4.0
  */
 
 public interface GraphInterface<T> {

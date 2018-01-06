@@ -1,9 +1,11 @@
 package DataStructures.Tree;
-import java.util.Iterator;
 
-public interface TreeIteratorInterface<T> {
-    public Iterator<T> getPreorderIterator();
-    public Iterator<T> getPostorderIterator();
-    public Iterator<T> getInorderIterator();
-    public Iterator<T> getLevelOrderIterator();
+public interface TreeIteratorInterface {
+    public void preorder();
+
+    public void inorder();
+
+    public void postorder();
+
+    public void levelorder();
 }

@@ -13,13 +13,11 @@ public class ArrayStack<T> implements StackInterface<T> {
 
     public ArrayStack(int capacity) {
         @SuppressWarnings("unchecked")
-        T[] tempStack = (T[])new Object[capacity];
+        T[] tempStack = (T[]) new Object[capacity];
         stack = tempStack;
         topIndex = -1;
     }
 
-    /** Adds a new entry to the top of this stack.
-     @param newEntry  an object to be added to the stack */
     public void push(T newEntry) {
         ensureCapacity();
         topIndex++;
@@ -33,9 +31,6 @@ public class ArrayStack<T> implements StackInterface<T> {
         }
     }
 
-    /** Removes and returns this stack’s top entry.
-     @return either the object at the top of the stack or, if the
-     stack is empty before the operation, null */
     public T pop() {
         T top = null;
         if (!isEmpty()) {
@@ -47,9 +42,6 @@ public class ArrayStack<T> implements StackInterface<T> {
         return top;
     }
 
-    /** Retrieves this stack’s top entry.
-     @return either the object at the top of the stack or null if
-     the stack is empty */
     public T peek() {
         T top = null;
         if (!isEmpty()) {
@@ -59,13 +51,10 @@ public class ArrayStack<T> implements StackInterface<T> {
         return top;
     }
 
-    /** Detects whether this stack is empty.
-     @return true if the stack is empty */
     public boolean isEmpty() {
         return topIndex < 0;
     }
 
-    /** Removes all entries from this stack */
     public void clear() {
         while (topIndex >= 0) {
             pop();

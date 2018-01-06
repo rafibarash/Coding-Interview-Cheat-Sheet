@@ -1,6 +1,23 @@
 package DataStructures.Tree;
 
-public interface BinaryNodeInterface<T extends Comparable<T>> {
+public interface BinaryNodeInterface<T extends Comparable<T>> extends TreeIteratorInterface {
+
+    /**
+     * Marks this vertex as visited.
+     */
+    public void visit();
+
+    /**
+     * Removes this vertex's visited mark.
+     */
+    public void unVisit();
+
+    /**
+     * Sees whether the vertex is marked as visited.
+     *
+     * @return True if the vertex is visited.
+     */
+    public boolean isVisited();
 
     /**
      * Retrieves the data portion of this node.
