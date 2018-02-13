@@ -99,8 +99,7 @@ public class BinaryNode<T extends Comparable<T>> implements BinaryNodeInterface<
 
     @Override
     public int getHeight() {
-        int height = 1 + Math.max(left.getHeight(), right.getHeight());
-        return height;
+        return 1 + Math.max(left.getHeight(), right.getHeight());
     }
 
 

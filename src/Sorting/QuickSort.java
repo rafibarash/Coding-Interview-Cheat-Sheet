@@ -1,40 +1,48 @@
 package Sorting;
 
-public class QuickSort<T> {
+import java.util.Arrays;
 
-    public static <T extends Comparable<T>> void quicksort(T[] array, int left, int right) {
-        int index = partition(array, left, right);
-        if (left < index - 1) {
-            quicksort(array, left, index - 1);
+public class QuickSort {
+    public static int[] quicksort(int[] array, int low, int high) {
+        int index = partition(array, low, high);
+        // sort left half
+        if (low < index - 1) {
+            quicksort(array, low, index - 1);
         }
-        if (index < right) {
-            quicksort(array, index, right);
+        // sort right half
+        if (index < high) {
+            quicksort(array, index, high);
         }
+        return array;
     }
 
-    private static <T extends Comparable<T>> int partition(T[] array, int left, int right) {
-        T pivot = array[(right + left) / 2];
-
-        while (left <= right) {
-            if (array[left].compareTo(pivot) < 0) {
-                left++;
+    private static int partition(int[] array, int low, int high) {
+        int pivot = array[(low + high) / 2];
+        while (low <= high) {
+            // find element on left that should be on right
+            while (array[low] < pivot) {
+                low++;
             }
-            if (array[right].compareTo(pivot) > 0) {
-                right--;
+            // find element on right that should be on left
+            while (array[high] > pivot) {
+                high--;
             }
-            if (array[left].compareTo(array[right]) >= 0) {
-                swap(array, left, right);
-                left++;
-                right--;
+            // swap element, increment/decrement low and high
+            if (low <= high) {
+                int temp = array[low];
+                array[low] = array[high];
+                array[high] = temp;
+                low++;
+                high--;
             }
         }
-
-        return left;
+        return low;
     }
 
-    private static <T extends Comparable<T>> void swap(T[] array, int left, int right) {
-        T temp = array[left];
-        array[left] = array[right];
-        array[right] = temp;
+    public static void main(String[] args) {
+        int[] test1a = {1, 5, 6, 3, 2, 77, 4, 9};
+        System.out.println(Arrays.toString(test1a));
+        int[] test1b = QuickSort.quicksort(test1a, 0, test1a.length - 1);
+        System.out.println(Arrays.toString(test1b));
     }
 }
